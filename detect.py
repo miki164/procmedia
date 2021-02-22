@@ -21,11 +21,12 @@ class Detector:
 
     def _process_image(self) -> np.array:
         cascade = cv2.CascadeClassifier(self.haar_path)
+        print(self.haar_path)
         img = cv2.imread(self.file_path)
-        img = cascade.detectMultiScale(img,
+        rect = cascade.detectMultiScale(img,
                                        scaleFactor=1.2,
                                        minNeighbors=5)
-
+        img = utils.draw_rectangles(rect, img)
         return img
 
     # TODO: That's terrible function it's have to change!

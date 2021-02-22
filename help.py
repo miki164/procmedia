@@ -1,2 +1,4 @@
 def show_help():
-    print("It's help")
+    print("Procmedia help:")
+    print("-detect path_to_media path_to_haarcascade Optional: output_name")
+    print("Applies haarcascade to image/video")
